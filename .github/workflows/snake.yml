@@ -27,7 +27,18 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
-            - name: Push to GitHub
+            - name: Check for file changes
+              id: file_check
+              run: |
+                # 检查文件是否有变化
+                if git diff --exit-code --quiet -- assets/; then
+                  echo "changes_detected=false" >> $GITHUB_OUTPUT
+                else
+                  echo "changes_detected=true" >> $GITHUB_OUTPUT
+                fi
+
+            - name: Commit and push if changes
+              if: steps.file_check.outputs.changes_detected == 'true'
               uses: EndBug/add-and-commit@v7.2.1
               with:
                   branch: main
