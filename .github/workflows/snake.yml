@@ -2,17 +2,17 @@ name: Generate Snake
 
 on:
   schedule:
-    - cron: "0 */24 * * *"  # 每 24 小时运行一次
-  workflow_dispatch:        # 可手动触发
+    - cron: "0 */24 * * *" 
+  workflow_dispatch:       
   push:
     branches:
-      - main              # master 分支 push 时触发
+      - main             
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write       # 必须有写权限才能推送
+      contents: write      
 
     steps:
       - name: Checkout
@@ -31,5 +31,5 @@ jobs:
       - name: Commit and push
         uses: EndBug/add-and-commit@v7.2.1
         with:
-          branch: master     # 或 main，根据你的默认分支
+          branch: main    
           message: "Update GitHub contribution snake"
