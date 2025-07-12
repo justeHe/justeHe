@@ -2,9 +2,6 @@
 ![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Nothing+Right+,+Nothing+Wrong.)
 <h2 align="left">Github stats :bar_chart:</h2>
 
-<h4 align="left">Visitor's count :eyes:</h4>
-
-<p align="left"><img src="https://profile-counter.glitch.me/{justeHe}/count.svg" alt="justeHe :: Visitor's Count" /></p>
 
 ### 📊 GitHub Stats
 
